@@ -19,9 +19,9 @@ pipeline {
                 script {
                     if (params.Action == 'apply') {
                         sh 'terraform -chdir=terraform/static-site init'
-                        sh 'terraform -chdir=terraform/static-site apply -var "name=web" -var "group=web" -var region="us-east-1" -var profile="josue.sarabia" --auto-approve'
+                        sh 'terraform -chdir=terraform/static-site apply -var "name=web" -var "group=web" -var region="us-east-1" -var profile="" --auto-approve'
                     } else {
-                        sh 'terraform -chdir=terraform/static-site destroy -var "name=web" -var "group=web" -var region="us-east-1" -var profile="josue.sarabia" --auto-approve'
+                        sh 'terraform -chdir=terraform/static-site destroy -var "name=web" -var "group=web" -var region="us-east-1" -var profile="" --auto-approve'
                     }
                 }
             }
